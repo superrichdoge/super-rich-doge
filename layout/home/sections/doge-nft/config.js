@@ -1,0 +1,15 @@
+export const colors = [
+  'dodgerblue',
+  'orange',
+  'purple',
+  'tomato',
+  'red',
+  'blue',
+  'teal',
+  'yellow',
+  'green',
+  'black',
+  'pink',
+  'indigo',
+  'violet',
+];
