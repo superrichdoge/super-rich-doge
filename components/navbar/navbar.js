@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect, useRef } from 'react';
-// import { useMediaQuery } from 'react-responsive';
 import { useMediaQuery } from '@/hooks';
+import { useScrollContext } from '@/contexts';
+import { ScrollIds } from '@/constants';
+
 import {
   Header,
   Nav,
@@ -17,6 +19,7 @@ import {
 export const Navbar = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 900px)' });
   const [isOpen, setIsOpen] = useState(false);
+  const { onSetScrollId } = useScrollContext();
 
   const rootElRef = useRef();
 
@@ -40,6 +43,11 @@ export const Navbar = () => {
 
   const onToggle = () => setIsOpen((currentOpen) => !currentOpen);
 
+  const onClickNav = (id) => () => {
+    onToggle();
+    onSetScrollId(id);
+  };
+
   return (
     <Header>
       <Nav>
@@ -49,9 +57,15 @@ export const Navbar = () => {
         <div />
         {isDesktop ? (
           <NavMenu>
-            <NavMenuItem>About us</NavMenuItem>
-            <NavMenuItem>Tokenomics</NavMenuItem>
-            <NavMenuItem>Partnership</NavMenuItem>
+            <NavMenuItem onClick={onClickNav(ScrollIds.ABOUT_US)}>
+              About us
+            </NavMenuItem>
+            <NavMenuItem onClick={onClickNav(ScrollIds.TOKENOMICS)}>
+              Tokenomics
+            </NavMenuItem>
+            <NavMenuItem onClick={onClickNav(ScrollIds.PARTNERSHIP)}>
+              Partnership
+            </NavMenuItem>
             <NavMenuItem>Marketplace</NavMenuItem>
           </NavMenu>
         ) : (
@@ -61,9 +75,15 @@ export const Navbar = () => {
               <Hamburger isOpen={isOpen} />
             </HamburgerContainer>
             <NavMenu isOpen={isOpen}>
-              <NavMenuItem>About us</NavMenuItem>
-              <NavMenuItem>Tokenomics</NavMenuItem>
-              <NavMenuItem>Partnership</NavMenuItem>
+              <NavMenuItem onClick={onClickNav(ScrollIds.ABOUT_US)}>
+                About us
+              </NavMenuItem>
+              <NavMenuItem onClick={onClickNav(ScrollIds.TOKENOMICS)}>
+                Tokenomics
+              </NavMenuItem>
+              <NavMenuItem onClick={onClickNav(ScrollIds.PARTNERSHIP)}>
+                Partnership
+              </NavMenuItem>
               <NavMenuItem>Marketplace</NavMenuItem>
             </NavMenu>
           </>

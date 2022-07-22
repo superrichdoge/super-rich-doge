@@ -1,5 +1,10 @@
 import Image from 'next/image';
+import { useRef, useEffect } from 'react';
+
 import { useMediaQuery } from '@/hooks';
+import { useScrollContext } from '@/contexts';
+import { ScrollIds } from '@/constants';
+
 import {
   TokenomicsContainer,
   TitleContainer,
@@ -9,8 +14,23 @@ import {
 
 export const Tokenomics = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
+
+  const { scrollId, onSetScrollId } = useScrollContext();
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (scrollId === ScrollIds.TOKENOMICS && containerRef.current) {
+      window.scrollTo({
+        top: containerRef.current.offsetTop,
+        behavior: 'smooth',
+      });
+      onSetScrollId(null);
+    }
+    // eslint-disable-next-line
+  }, [scrollId]);
+
   return (
-    <TokenomicsContainer>
+    <TokenomicsContainer ref={containerRef}>
       <TitleContainer>
         <Image
           src='/images/tokenomics.png'

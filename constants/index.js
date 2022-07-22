@@ -1,0 +1,5 @@
+export const ScrollIds = {
+  ABOUT_US: 'ABOUT_US',
+  TOKENOMICS: 'TOKENOMICS',
+  PARTNERSHIP: 'PARTNERSHIP',
+};

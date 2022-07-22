@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import { Navbar } from '@/components';
+import { ScrollProvider } from '@/contexts';
 
 import {
   Hero,
@@ -20,17 +21,19 @@ export const HomeLayout = () => {
         <title>Super Rich Doge</title>
       </Head>
 
-      <Navbar />
-      <main>
-        <Hero />
-        <AboutUs />
-        <DogeNft />
-        <Tokenomics />
-        <Roadmap />
-        <Teams />
-        <Partnership />
-        <Footer />
-      </main>
+      <ScrollProvider>
+        <Navbar />
+        <main>
+          <Hero />
+          <AboutUs />
+          <DogeNft />
+          <Tokenomics />
+          <Roadmap />
+          <Teams />
+          <Partnership />
+          <Footer />
+        </main>
+      </ScrollProvider>
     </div>
   );
 };

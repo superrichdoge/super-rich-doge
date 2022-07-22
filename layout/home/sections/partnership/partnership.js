@@ -1,4 +1,8 @@
 import Image from 'next/image';
+import { useRef, useEffect } from 'react';
+
+import { useScrollContext } from '@/contexts';
+import { ScrollIds } from '@/constants';
 
 import {
   PartnershipContainer,
@@ -10,9 +14,24 @@ import {
 } from './styles';
 
 export const Partnership = () => {
+  const { scrollId, onSetScrollId } = useScrollContext();
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (scrollId === ScrollIds.PARTNERSHIP && containerRef.current) {
+      window.scrollTo({
+        top: containerRef.current.offsetTop,
+        behavior: 'smooth',
+      });
+      onSetScrollId(null);
+    }
+    // eslint-disable-next-line
+  }, [scrollId]);
+
   return (
-    <PartnershipContainer>
+    <PartnershipContainer ref={containerRef}>
       <HeaderContainer>
+        0
         <HeaderImageContainer>
           <Image
             src='/images/partnership.png'

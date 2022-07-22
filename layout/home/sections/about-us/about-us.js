@@ -1,4 +1,8 @@
 import Image from 'next/image';
+import { useRef, useEffect } from 'react';
+import { useScrollContext } from '@/contexts';
+import { ScrollIds } from '@/constants';
+
 import {
   AboutUsContainer,
   IconContainer,
@@ -8,8 +12,22 @@ import {
 } from './styles';
 
 export const AboutUs = () => {
+  const { scrollId, onSetScrollId } = useScrollContext();
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (scrollId === ScrollIds.ABOUT_US && containerRef.current) {
+      window.scrollTo({
+        top: containerRef.current.offsetTop,
+        behavior: 'smooth',
+      });
+      onSetScrollId(null);
+    }
+    // eslint-disable-next-line
+  }, [scrollId]);
+
   return (
-    <AboutUsContainer>
+    <AboutUsContainer ref={containerRef}>
       <IconContainer>
         <AboutUsImage>
           <Image
