@@ -29,7 +29,7 @@ export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
 
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 900px) {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
@@ -62,7 +62,7 @@ export const NavMenuItem = styled.li`
     background-color: ${({ theme }) => theme.colors.orange};
   }
 
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 900px) {
     width: 50vw;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
@@ -99,7 +99,7 @@ export const HamburgerContainer = styled.div`
   cursor: pointer;
   z-index: 11;
 
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 900px) {
     display: block;
   }
 
@@ -162,7 +162,7 @@ export const MenuToggler = styled.input.attrs(() => ({
   cursor: pointer;
   z-index: 12;
 
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 900px) {
     display: block;
   }
 

@@ -15,7 +15,7 @@ import {
 } from './styles';
 
 export const Navbar = () => {
-  const isDesktop = useMediaQuery({ query: '(min-width: 1100px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 900px)' });
   const [isOpen, setIsOpen] = useState(false);
 
   const rootElRef = useRef();
@@ -52,7 +52,6 @@ export const Navbar = () => {
             <NavMenuItem>About us</NavMenuItem>
             <NavMenuItem>Tokenomics</NavMenuItem>
             <NavMenuItem>Partnership</NavMenuItem>
-            <NavMenuItem>Whitepaper</NavMenuItem>
             <NavMenuItem>Marketplace</NavMenuItem>
           </NavMenu>
         ) : (
@@ -65,7 +64,6 @@ export const Navbar = () => {
               <NavMenuItem>About us</NavMenuItem>
               <NavMenuItem>Tokenomics</NavMenuItem>
               <NavMenuItem>Partnership</NavMenuItem>
-              <NavMenuItem>Whitepaper</NavMenuItem>
               <NavMenuItem>Marketplace</NavMenuItem>
             </NavMenu>
           </>
