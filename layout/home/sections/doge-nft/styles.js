@@ -49,8 +49,12 @@ export const NftCard = styled.div`
   }
 `;
 
-export const MainImageCard = styled(Image)`
+export const MainImageCard = styled.img`
   border-radius: 8px;
+  max-width: 426px;
+  width: 100%;
+  display: block;
+  object-fit: cover;
 `;
 
 export const CardContainer = styled.div`

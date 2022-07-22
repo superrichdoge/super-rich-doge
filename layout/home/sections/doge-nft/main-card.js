@@ -27,10 +27,8 @@ export const MainCard = () => {
 
   return (
     <MainImageCard
-      width={426}
-      height={565}
       src={`/images/doge-nft-${imageIndex + 1}.png`}
-      alt='doge'
+      alt={`current-doge-nft`}
     />
   );
 };
