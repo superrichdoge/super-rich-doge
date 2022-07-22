@@ -38,9 +38,7 @@ export const NavMenu = styled.ul`
     transform: translateX(100vw);
     position: fixed;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
     transition: all 0.2s;
 
     ${({ isOpen }) =>

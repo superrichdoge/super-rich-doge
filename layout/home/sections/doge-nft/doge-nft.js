@@ -12,6 +12,7 @@ export const DogeNft = () => {
           alt='super rich doge nft'
           width={323}
           height={323}
+          priority
         />
         <MainCard />
       </HeaderContainer>

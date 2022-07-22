@@ -4,6 +4,8 @@ export const PartnershipContainer = styled.section`
   background-color: ${({ theme }) => theme.colors.yellow};
   padding-bottom: 32px;
   min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
 `;
 
 export const HeaderContainer = styled.div`

@@ -37,6 +37,7 @@ export const Tokenomics = () => {
           alt='Tokenomics'
           width={648}
           height={148}
+          priority
         />
       </TitleContainer>
       <FlexContainer>
@@ -46,12 +47,14 @@ export const Tokenomics = () => {
             alt='tokenomics button'
             width={438}
             height={457}
+            priority
           />
           <Image
             src='/images/tokenomics-chart.png'
             alt='tokenomics chart'
             width={426}
             height={426}
+            priority
           />
         </ContentFlexContainer>
         <div></div>

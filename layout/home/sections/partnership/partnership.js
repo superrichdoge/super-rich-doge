@@ -31,13 +31,13 @@ export const Partnership = () => {
   return (
     <PartnershipContainer ref={containerRef}>
       <HeaderContainer>
-        0
         <HeaderImageContainer>
           <Image
             src='/images/partnership.png'
             alt='partnership'
             width={426}
             height={113}
+            priority
           />
         </HeaderImageContainer>
       </HeaderContainer>

@@ -48,6 +48,7 @@ export const Roadmap = () => {
           alt='roadmap'
           width={646}
           height={218}
+          priority
         />
       </CenterContainer>
       <TimelineContainer>

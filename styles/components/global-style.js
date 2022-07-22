@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 15px;
     color: ${({ theme }) => theme.colors.black};
     overflow-x: hidden;
+    max-width: 100vw;
   }
 
   ul {

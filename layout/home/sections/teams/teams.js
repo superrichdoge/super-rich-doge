@@ -11,6 +11,7 @@ export const Teams = () => {
           alt='our team'
           width={404}
           height={224}
+          priority
         />
       </CenterContainer>
       <CenterContainer justify='space-between'>
