@@ -1,19 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
-import { NftCard } from './styles';
-import { colors } from './config';
+
+import { MainImageCard } from './styles';
+import { dogeImages } from './config';
 
 export const MainCard = () => {
-  const [colorIndex, setColorIndex] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
   const interval = useRef();
 
   useEffect(() => {
     interval.current = setInterval(() => {
-      setColorIndex((currentColorIndex) => {
-        if (currentColorIndex === colors.length - 1) {
+      setImageIndex((currentImageIndex) => {
+        if (currentImageIndex === dogeImages.length - 1) {
           return 0;
         }
 
-        return (currentColorIndex += 1);
+        return (currentImageIndex += 1);
       });
     }, 1000);
 
@@ -24,5 +25,12 @@ export const MainCard = () => {
     };
   }, []);
 
-  return <NftCard bg={colors[colorIndex]} />;
+  return (
+    <MainImageCard
+      width={426}
+      height={565}
+      src={`/images/doge-nft-${imageIndex + 1}.png`}
+      alt='doge'
+    />
+  );
 };

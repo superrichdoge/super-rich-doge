@@ -1,12 +1,7 @@
 import Image from 'next/image';
-import {
-  DogeNftContainer,
-  HeaderContainer,
-  NftCard,
-  CardContainer,
-} from './styles';
+import { DogeNftContainer, HeaderContainer, CardContainer } from './styles';
 import { MainCard } from './main-card';
-import { colors } from './config';
+import { dogeImages } from './config';
 
 export const DogeNft = () => {
   return (
@@ -21,8 +16,15 @@ export const DogeNft = () => {
         <MainCard />
       </HeaderContainer>
       <CardContainer>
-        {colors.map((color) => (
-          <NftCard key={color} bg={color} size='sm' />
+        {dogeImages.map((_, index) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            key={index}
+            src={`/images/doge-nft-${index + 1}.png`}
+            alt='super rich doge nft'
+            width={150}
+            height={222}
+          />
         ))}
       </CardContainer>
     </DogeNftContainer>

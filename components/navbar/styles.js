@@ -35,7 +35,7 @@ export const NavMenu = styled.ul`
     height: 100vh;
     width: 100vw;
     background-color: ${({ theme }) => theme.colors.primary};
-    transform: translateX(100%);
+    transform: translateX(100vw);
     position: fixed;
     top: 0;
     bottom: 0;

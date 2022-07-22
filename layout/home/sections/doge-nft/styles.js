@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import Image from 'next/image';
 
 const slides = keyframes`
   from {
@@ -6,7 +7,7 @@ const slides = keyframes`
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(calc(-3456px + 95vw));
   }
 `;
 
@@ -17,6 +18,7 @@ export const DogeNftContainer = styled.section`
   background-repeat: no-repeat;
   padding-top: 150px;
   padding-bottom: 184px;
+  overflow-x: hidden;
 `;
 
 export const HeaderContainer = styled.div`
@@ -47,9 +49,17 @@ export const NftCard = styled.div`
   }
 `;
 
+export const MainImageCard = styled(Image)`
+  border-radius: 8px;
+`;
+
 export const CardContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
-  animation: ${slides} infinite 4s linear;
+  animation: ${slides} infinite 6s linear;
+
+  img {
+    border-radius: 8px;
+  }
 `;
