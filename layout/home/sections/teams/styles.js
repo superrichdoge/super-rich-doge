@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const TeamsContainer = styled.section`
-  background-image: url('/images/team-background.png');
+  background-image: url('/images/team-background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
